@@ -153,7 +153,7 @@ height: 100vh;
 
 .card-columns {
   /* -webkit-column-count: 5; */
-  column-count: 4;
+  column-count: 5;
 }
 
  #about.about-open #about-text {
@@ -184,6 +184,9 @@ height: 100vh;
   background: none;
   border: none;
   cursor: pointer;
+  margin: 0 !important;
+  border-radius: 0;
+  width: 10%;
 }
 
 /* #moving-img {border: solid red}; */
