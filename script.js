@@ -37,6 +37,11 @@ data.then(function(data) {
         $("#moving-img").css("display", "block");
 
         makeitdraggable(d);
+
+        $("#star").css("display", "block");
+        $("#star").css("width", (width/5)*4)
+        $("#star").css("left", imgX + width/10)
+        $("#star").css("top", imgY + height/10)
       });
 
     // IMAGE

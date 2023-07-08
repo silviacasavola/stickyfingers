@@ -176,7 +176,7 @@ height: 100vh;
   cursor: pointer;
 }
 
-#moving-img {border: solid red};
+/* #moving-img {border: solid red}; */
 
 #moving-img {cursor: pointer}
 #moving-img img {width: 100%; height: 100%; cursor: pointer}
