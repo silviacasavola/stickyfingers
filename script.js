@@ -82,7 +82,16 @@ function makeitdraggable(d){
         $("#right-side-container").droppable({
             drop: function( event, ui ) {
             $("#right-side-container div").css("opacity", "1");
-            $("#object_name").html(d.item);
+            $("#d-date").html(d.filing_date);
+            $("#d-img").attr("src", "img/" + d.path);
+            $("#d-item").html(d.item);
+            $("#d-name").html(d.protagonist);
+            $("#d-age").html(d.age);
+            $("#d-job").html(d.job);
+            $("#d-job").html(d.location);
+            $("#d-interests").html(d.interests);
+            $("#d-issues").html(d.related_issue);
+            $("#d-text").html(d.story);
           }
         })
   }

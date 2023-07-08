@@ -78,7 +78,14 @@ height: 100vh;
 /* RIGHT SIDE */
 #right-side-container {
   height: 100%;
-  border: var(--border)}
+  border: var(--border);
+  overflow:scroll;}
+
+
+#right-side-container::-webkit-scrollbar {
+    display: none;
+  }
+
 
 #right-side-container div {
   opacity: 0
@@ -87,6 +94,9 @@ height: 100vh;
 #right-side-container .d-inline {
   padding: var(--margin);
 }
+
+#d-item {text-transform: uppercase; text-align: center}
+#d-img {object-fit: contain; width: 100%}
 
 /* ABOUT  */
 #about {
