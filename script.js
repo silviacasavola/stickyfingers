@@ -37,12 +37,20 @@ data.then(function(data) {
         $("#moving-img").css("display", "block");
 
         makeitdraggable(d);
+      })
+    .on("mouseover", function (event) {
+        width = $(this).width();
+        height = $(this).height();
+        let imgXY = $(this).offset();
+
+        var imgX = imgXY.left;
+        var imgY = imgXY.top;
 
         $("#star").css("display", "block");
         $("#star").css("width", (width/5)*4)
         $("#star").css("left", imgX + width/10)
         $("#star").css("top", imgY + height/10)
-      });
+    });
 
     // IMAGE
     card.append("img")
