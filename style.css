@@ -96,7 +96,7 @@ height: 100vh;
 }
 
 #d-item {text-transform: uppercase; text-align: center}
-#d-img {object-fit: contain; width: 100%}
+#d-img {object-fit: contain; max-width: 70%}
 
 /* ABOUT  */
 #about {
@@ -152,8 +152,8 @@ height: 100vh;
 }
 
 .card-columns {
-  -webkit-column-count: 5;
-  column-count: 5;
+  /* -webkit-column-count: 5; */
+  column-count: 4;
 }
 
  #about.about-open #about-text {
