@@ -142,8 +142,8 @@ height: 100vh;
 }
 
 .card-columns {
-  -webkit-column-count: 4;
-  column-count: 4;
+  -webkit-column-count: 5;
+  column-count: 5;
 }
 
  #about.about-open #about-text {
@@ -170,9 +170,7 @@ height: 100vh;
   display: none;
 }
 
-.card-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.card {
   background: none;
+  border: none;
 }

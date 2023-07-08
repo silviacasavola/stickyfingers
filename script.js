@@ -23,7 +23,7 @@ data.then(function(data) {
 
         width = $(this).width();
         $("#moving-img").css("width", width);
-        $("#moving-img").attr("src", "images/" + d.filename);
+        $("#moving-img").attr("src", "img/" + d.path);
         let imgXY = $(this).offset();
 
         var imgX = imgXY.left;
@@ -41,16 +41,20 @@ data.then(function(data) {
     card.append("img")
     .attr("class", "card-img-top")
     .attr("src", function(d) {
-        let filename = d.filename;
-        let path = "images/";
+        let filename = d.path;
+        let path = "img/";
         // Concatenate the path and the filename of the image
         return path + filename;
     })
 
-    card.append("div")
-    .attr("class", "card-overlay");
-
     })
+
+// $(document).ready(function() {
+//   $("img").on("dragstart", function(event) {
+//   event.preventDefault();
+//   makeitdraggable()
+// })
+// }
 
 function makeitdraggable(d) {
   if (isDragging) {
@@ -58,7 +62,7 @@ function makeitdraggable(d) {
     $("#right-side-container").droppable({
       drop: function( event, ui ) {
       $("#right-side-container div").css("opacity", "1");
-      $("#object_name").html(d.filename);
+      $("#object_name").html(d.item);
     }
   })
   }
