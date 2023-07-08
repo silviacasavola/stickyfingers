@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sticky fingers</title>
+
+    <!-- Bootstrap and CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery e jQuery UI -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+
+  </head>
+  <body>
+  <img id="moving-img" style="z-index: 100; position: fixed; display: none">
+      <!-- <div class="container"> -->
+  <div class="d-flex">
+
+  <div class="d-inline col-8" id="left-side">
+  <img src="images/sticky.png" id="logo">
+
+    <div class="d-flex" id="objects-container">
+          <!-- <div class="card"> -->
+            <!-- <img class="card-img-top" src="https://via.placeholder.com/600" alt="Card image cap"> -->
+            <!-- <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+            </div> -->
+          <!-- </div> -->
+
+          <div id="all-cards" class="card-columns">
+            <!-- Our card elements will be placed here -->
+          </div>
+      </div>
+    </div>
+
+    <div class="d-inline col-4" id="right-side">
+        <div class="d-flex flex-column" id="right-side-container">
+
+          <div class="d-inline-flex" style="border-bottom: 1px solid">
+            <div class="d-inline-flex col-6" style="border-right: 1px solid">date
+            </div>
+
+            <div class="d-inline col-6">date
+            </div>
+          </div>
+
+
+          <div id="object_name" class="d-inline pressura" style="border-bottom: 1px solid">COFFEE BAG</div>
+
+          <div class="d-inline-flex flex-wrap" style="border-bottom: 1px solid">
+            <div class="d-inline col-3">PLACE</div>
+            <div class="d-inline col-9">Starbucks</div>
+            <div class="d-inline col-3">THIEF</div>
+            <div class="d-inline col-9">34</div>
+            <div class="d-inline col-3">NAME</div>
+            <div class="d-inline col-9">Rosanna</div>
+          </div>
+
+          <div class="d-inline">
+            “After dropping my son off in the morning, everyday I would go to Starbucks, take a bag of coffee and perhaps a few other things and put them in my purse. I'd throw them in the trunk of my car, or maybe give them to some homeless person in the street. I don’t even like coffee. It was just a ritual.”
+          </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <div id="about" class="about-closed">
+
+    <div class="pressura">
+    <div id="about-button">ABOUT</div>
+    <div class="about-inner" id="closure-button">X</div>
+  </div>
+
+    <div id="about-text" class="about-inner">
+    Sticky fingers is a project promoted by the <a href="https://theshulmancenter.com/">Shulman Center</a>, to share the hidden truths of the experience of kleptomaniacs that joined our center.
+    <br><br>
+    At the Shulman Center, we serve individuals, couples, families, organizations, and communities affected by shoplifting, Overspending, employee theft and/or hoarding issues. Since 1992, we’ve helped people from around the world through our sensitive and effective assessment, education, and treatment.
+    <br><br>
+    Kleptomania is classified as an impulse control disorder characterized by the inability to resist the urge to steal items, usually for reasons other than personal use or financial gain.
+    <br><br>
+    During our 30 years of service, we could see how much hurt comes from a general misconception of the topic, and adds up to the difficulties of the disorder itself. Despite its clinical connotation, kleptomaniacs undergo moral scrutiny and are often stereotyped and diminished.
+    <br><br>
+    This is why we asked members of our community to share their testimony, highlighting the several sides and collateral implications of their disorders, and how they feel about it. The goal is sensitize a broader public, and to make some order in the hank of pre and misconceptions.
+    <br><br>
+    <img src="hank.png" style="mix-blend-mode: multiply; width: 100%">
+    <br><br>
+    If you or someone close to you might need help for kleptomania, contact us at <a href="mailto:terrenceshulman@theshulmancenter.com">terrenceshulman@theshulmancenter.com</a>.
+    <br><br>
+    If you want to leave your testimony too, contact us at <a>stickyfingers@theshulmancenter.com</a>.
+    <br><br>
+    If you want to give back the value of something that you stole, you can do through our partner project <a href="https://unsteal.org/">unsteal.org</a>.
+    <br><br>
+
+  <!-- <div id="logo-container"> -->
+    <a href="https://theshulmancenter.com/"><img src="images/shulman-logo.png"></a>
+    <a href="https://unsteal.org/"><img src="images/unsteal-logo.png" style="padding: 1vh var(--margin) 1vh 0"></a>
+    <a><img src="images/insta-logo.svg" style="padding: 1vh var(--margin) 1vh 0"></a>
+  <!-- </div> -->
+  </div>
+    </div>
+
+      <!-- ******************* Utilities ******************* -->
+      <!-- Javascript libraries -->
+      <!-- d3.js -->
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+      <script src="script.js"></script>
+
+      <script>
+
+      $("#about-button").click(function() {
+      $("#about").removeClass("about-closed").addClass("about-open");
+      })
+
+      $("#closure-button").click(function() {
+      $("#about").removeClass("about-open").addClass("about-closed");
+      $("#about-text").scrollTop(0);
+      })
+
+      // $(this).css("position", "fixed");
+      // $(this).draggable()
+      </script>
+  </body>
+</html>

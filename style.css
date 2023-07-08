@@ -1,0 +1,178 @@
+:root {
+/* Z-INDEX LAYERS */
+  --bottom-layer: 0;
+  --top-layer: 10;
+
+/* MARGINS */
+  --margin: 0.5vw;
+  --button-margin: var(--margin) calc(var(--margin)*2) var(--margin) calc(var(--margin)*2);
+  --font-size: 1.2vw;
+
+  --grey: #E0E0E0;
+  --yellow: #FFFD88;
+
+  --border: solid 1px;
+}
+
+
+/* FONT */
+@font-face {
+  font-family: "Suisse Intl Mono";
+  src: url("font/SuisseIntlMono-Regular.otf");
+  font-weight:normal;
+  font-style: normal;
+  }
+
+@font-face {
+  font-family: "Pressura";
+  src: url("font/GT-Pressura-Regular-Trial.otf");
+  font-weight:normal;
+  font-style: normal;
+    }
+
+body {
+  margin: 0;
+  width: 100%;
+  max-height: 100vh;
+  /* max-width: 100vw;
+  max-height: 100vh; */
+  background-color: var(--grey);
+  overflow: hidden;
+  font-size: var(--font-size);
+  font-family: "Suisse Intl Mono";
+}
+
+.pressura {
+  font-family: "Pressura";
+  font-size: calc(2*var(--font-size));
+}
+
+#logo {width: 75%}
+
+#left-side, #right-side {
+padding: calc(var(--margin)*2);
+height: 100vh;
+}
+
+#logo {
+  padding-bottom: calc(var(--margin)*2);
+}
+
+#left-side {padding-right: 0}
+
+#objects-container::-webkit-scrollbar {
+  display: none;
+}
+
+#objects-container {
+  overflow: scroll;
+  scrollbar-width: none;
+  height: 100%;
+}
+
+.card {
+    width: 20%;
+}
+
+
+/* RIGHT SIDE */
+#right-side-container {
+  height: 100%;
+  border: var(--border)}
+
+#right-side-container div {
+  opacity: 0
+}
+
+#right-side-container .d-inline {
+  padding: var(--margin);
+}
+
+/* ABOUT  */
+#about {
+  background-color: var(--yellow);
+  border: var(--border);
+
+  position: fixed;
+  bottom: calc(var(--margin)*2);
+  left: calc(var(--margin)*2);
+  z-index: 15;
+  transition: min-width 0.1s ease, max-width 0.1s ease, max-height 0.1s ease;
+
+  /* overflow: scroll;
+  scrollbar-width: none; */
+  overflow:hidden;
+}
+
+#closure-button, #about-button {
+  padding: var(--button-margin);
+}
+
+#about.about-open .d-flex {
+  padding-bottom: calc(var(--margin)*2)
+}
+
+#closure-button {
+  padding: var(--button-margin);
+  border: solid;
+  border-width: 0px 0px 1px 1px;
+  cursor: pointer;
+}
+
+#about.about-closed {
+  cursor: pointer;
+  /* max-width: 10vw; */
+  min-width: 1vw;
+  max-height: calc(var(--font-size)*2 + var(--margin)*4)
+}
+
+#about.about-closed .about-inner {
+  display: none;
+}
+
+#about.about-open
+ {
+   min-width: 55vw;
+   max-width: 55vw;
+   max-height: 60vh; }
+
+ #about.about-open .pressura  {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-columns {
+  -webkit-column-count: 4;
+  column-count: 4;
+}
+
+ #about.about-open #about-text {
+  display: inline-block;
+  overflow: scroll;
+  padding: calc(var(--margin)*2);
+  max-height: 50vh;
+  width: 90%;
+}
+
+#about a {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#about a img {
+  height: 7vh;
+  padding-right: var(--margin);
+  margin-top: var(--margin);
+}
+
+#about-text::-webkit-scrollbar {
+  display: none;
+}
+
+.card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
