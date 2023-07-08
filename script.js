@@ -81,7 +81,7 @@ function makeitdraggable(d){
             $("#d-name").html(d.protagonist);
             $("#d-age").html(d.age);
             $("#d-job").html(d.job);
-            $("#d-job").html(d.location);
+            $("#d-location").html(d.location);
             $("#d-interests").html(d.interests);
             $("#d-issues").html(d.related_issue);
             $("#d-text").html(d.story);
