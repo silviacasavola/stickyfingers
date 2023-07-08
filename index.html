@@ -43,28 +43,41 @@
         <div class="d-flex flex-column" id="right-side-container">
 
           <div class="d-inline-flex" style="border-bottom: 1px solid">
-            <div class="d-inline-flex col-6" style="border-right: 1px solid">FILING DATE<br><span id="d-date"></span>
+            <div class="d-inline-flex flex-column justify-content-end col-6" style="border-right: 1px solid">
+
+            <div class="d-flex flex-column text-right" style="position: absolute; top: 0; right: 0; padding: var(--margin); border: solid; border-width: 0px 0px 1px 1px">
+            <div class="bold">ITEM NO.</div>
+            <div id="d-index"></div>
             </div>
 
-            <div class="d-inline col-6" style="text-align: center"><img id="d-img"></span>
+            <div class="d-inline-flex flex-column">
+            <div class="bold">FILING DATE</div>
+            <div id="d-date"></div>
+            </div>
+          </div>
+
+            <div class="col-6" style="text-align: center"><img id="d-img"></span>
             </div>
           </div>
 
 
-          <div id="d-item" class="d-inline pressura" style="border-bottom: 1px solid"></div>
+          <div class="d-inline" style="border-bottom: 1px solid">
+          <div class="bold" style="position: absolute;">ITEM</div>
+          <div id="d-item" class="pressura bold"></div>
+          </div>
 
-          <div class="d-inline-flex flex-wrap" style="border-bottom: 1px solid">
-            <div class="d-inline col-4">NAME</div>
+          <div class="d-inline-flex flex-wrap align-items-end" id="differentpadding" style="border-bottom: 1px solid">
+            <div class="d-inline col-4 bold">NAME</div>
             <div class="d-inline col-8" id="d-name"></div>
-            <div class="d-inline col-4">AGE</div>
+            <div class="d-inline col-4 bold">AGE</div>
             <div class="d-inline col-8" id="d-age"></div>
-            <div class="d-inline col-4">JOB</div>
+            <div class="d-inline col-4 bold">JOB</div>
             <div class="d-inline col-8" id="d-job"></div>
-            <div class="d-inline col-4">LOCATION</div>
+            <div class="d-inline col-4 bold">LOCATION</div>
             <div class="d-inline col-8" id="d-location"></div>
-            <div class="d-inline col-4">INTERESTS</div>
+            <div class="d-inline col-4 bold">INTERESTS</div>
             <div class="d-inline col-8" id="d-interests"></div>
-            <div class="d-inline col-4">RELATED ISSUES</div>
+            <div class="d-inline col-4 bold">RELATED ISSUES</div>
             <div class="d-inline col-8" id="d-issues"></div>
           </div>
 

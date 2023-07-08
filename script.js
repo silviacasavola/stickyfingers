@@ -1,15 +1,9 @@
-// Interpret the data as the correct format. Use d3.csv or d3.tsv accordingly.
 data = d3.csv("data/data.csv");
-// let isDragging = false;
 
-// Select the container where we will put our HTML elements
 let cards = d3.select("#all-cards");
 let info = d3.select("#right-side-container")
 
-// Load data
 data.then(function(data) {
-    // Do stuff with your data!
-    // console.log(data);
 
     // Join your data to the creation of div elements to the same number of items in your dataset.
     let card = cards.selectAll("div")
@@ -19,14 +13,15 @@ data.then(function(data) {
     .on("mousedown", function(event) {
       let d = d3.select(event.currentTarget).datum();
 
-        // isDragging = true;
-
         width = $(this).width();
         height = $(this).height();
         $("#moving-img").css("width", width);
         $("#moving-img").css("height", height);
         $("#moving-img img").attr("src", "img/" + d.path);
         let imgXY = $(this).offset();
+
+        // let date = new Date(d.filing_date);
+        // console.log(date)
 
         var imgX = imgXY.left;
         var imgY = imgXY.top;
@@ -58,7 +53,6 @@ data.then(function(data) {
     .attr("src", function(d) {
         let filename = d.path;
         let path = "img/";
-        // Concatenate the path and the filename of the image
         return path + filename;
     })
 
@@ -66,13 +60,11 @@ data.then(function(data) {
 
 $(document).ready(function() {
     $(document).on("dragstart", "img", function(event) {
-      console.log("Dragstart event triggered");
       event.preventDefault();
     });
 })
 
 function makeitdraggable(d){
-  // if (isdragging) {
         $("#moving-img").draggable({
           stop: function( event, ui ) {
           $("#moving-img").css("display", "none");
@@ -82,6 +74,7 @@ function makeitdraggable(d){
         $("#right-side-container").droppable({
             drop: function( event, ui ) {
             $("#right-side-container div").css("opacity", "1");
+            $("#d-index").html(d.index);
             $("#d-date").html(d.filing_date);
             $("#d-img").attr("src", "img/" + d.path);
             $("#d-item").html(d.item);
