@@ -52,7 +52,7 @@ data.then(function(data) {
     })
 
 $(document).ready(function() {
-    $(document).on("dragstart", "img.card-img-top", function(event) {
+    $(document).on("dragstart", "img", function(event) {
       console.log("Dragstart event triggered");
       event.preventDefault();
     });
