@@ -73,6 +73,7 @@ function makeitdraggable(d){
 
         $("#right-side-container").droppable({
             drop: function( event, ui ) {
+            $("#preview-text").css("display", "none");
             $("#right-side-container div").css("opacity", "1");
             $("#d-index").html(d.index);
             $("#d-date").html(d.filing_date);
