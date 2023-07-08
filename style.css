@@ -174,3 +174,7 @@ height: 100vh;
   background: none;
   border: none;
 }
+
+#moving-img {border: solid red};
+
+/* #moving-img img {width: 100%; height: 100%} */

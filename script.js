@@ -22,8 +22,10 @@ data.then(function(data) {
         isDragging = true;
 
         width = $(this).width();
+        height = $(this).height();
         $("#moving-img").css("width", width);
-        $("#moving-img").attr("src", "img/" + d.path);
+        $("#moving-img").css("height", height);
+        $("#moving-img img").attr("src", "img/" + d.path);
         let imgXY = $(this).offset();
 
         var imgX = imgXY.left;
@@ -49,27 +51,52 @@ data.then(function(data) {
 
     })
 
-// $(document).ready(function() {
-//   $("img").on("dragstart", function(event) {
-//   event.preventDefault();
-//   makeitdraggable()
-// })
-// }
+$(document).ready(function() {
+    $(document).on("dragstart", "img.card-img-top", function(event) {
+      console.log("Dragstart event triggered");
+      event.preventDefault();
+    });
+})
 
-function makeitdraggable(d) {
-  if (isDragging) {
-    $("#moving-img").draggable()
-    $("#right-side-container").droppable({
-      drop: function( event, ui ) {
-      $("#right-side-container div").css("opacity", "1");
-      $("#object_name").html(d.item);
-    }
-  })
+function makeitdraggable(d){
+  // if (isdragging) {
+        $("#moving-img").draggable()
+          $("#right-side-container").droppable({
+            drop: function( event, ui ) {
+            $("#right-side-container div").css("opacity", "1");
+            $("#object_name").html(d.item);
+            $("#moving-img").css("display", "none");
+            isdragging = false;
+          }
+        })
+        // }
   }
 
-  $(document).on("mouseup", function() {
-  isDragging = false;
-   $("#moving-img").css("display", "none");
- })
+  // function makeitdraggable() {
+  //     $("#moving-img").draggable()
+  //         $("#right-side-container").droppable({
+  //           drop: function( event, ui ) {
+  //           $("#right-side-container div").css("opacity", "1");
+  //           $("#object_name").html(d.item);
+  //           $("#moving-img").css("display", "none");
+  //         }
+  //       })
+  //     }
+//
+// function makeitdraggable(d) {
+//   if (isDragging) {
+//     $("#moving-img").draggable()
+//     $("#right-side-container").droppable({
+//       drop: function( event, ui ) {
+//       $("#right-side-container div").css("opacity", "1");
+//       $("#object_name").html(d.item);
+//     }
+//   })
+// })
+//
+//   $(document).on("mouseup", function() {
+//   isDragging = false;
+//    $("#moving-img").css("display", "none");
+//  })
 
- }
+ // }
