@@ -1,6 +1,6 @@
 // Interpret the data as the correct format. Use d3.csv or d3.tsv accordingly.
 data = d3.csv("data/data.csv");
-let isDragging = false;
+// let isDragging = false;
 
 // Select the container where we will put our HTML elements
 let cards = d3.select("#all-cards");
@@ -19,7 +19,7 @@ data.then(function(data) {
     .on("mousedown", function(event) {
       let d = d3.select(event.currentTarget).datum();
 
-        isDragging = true;
+        // isDragging = true;
 
         width = $(this).width();
         height = $(this).height();
@@ -60,43 +60,16 @@ $(document).ready(function() {
 
 function makeitdraggable(d){
   // if (isdragging) {
-        $("#moving-img").draggable()
-          $("#right-side-container").droppable({
+        $("#moving-img").draggable({
+          stop: function( event, ui ) {
+          $("#moving-img").css("display", "none");
+          }
+        })
+
+        $("#right-side-container").droppable({
             drop: function( event, ui ) {
             $("#right-side-container div").css("opacity", "1");
             $("#object_name").html(d.item);
-            $("#moving-img").css("display", "none");
-            isdragging = false;
           }
         })
-        // }
   }
-
-  // function makeitdraggable() {
-  //     $("#moving-img").draggable()
-  //         $("#right-side-container").droppable({
-  //           drop: function( event, ui ) {
-  //           $("#right-side-container div").css("opacity", "1");
-  //           $("#object_name").html(d.item);
-  //           $("#moving-img").css("display", "none");
-  //         }
-  //       })
-  //     }
-//
-// function makeitdraggable(d) {
-//   if (isDragging) {
-//     $("#moving-img").draggable()
-//     $("#right-side-container").droppable({
-//       drop: function( event, ui ) {
-//       $("#right-side-container div").css("opacity", "1");
-//       $("#object_name").html(d.item);
-//     }
-//   })
-// })
-//
-//   $(document).on("mouseup", function() {
-//   isDragging = false;
-//    $("#moving-img").css("display", "none");
-//  })
-
- // }

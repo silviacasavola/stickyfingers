@@ -173,8 +173,10 @@ height: 100vh;
 .card {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
-/* #moving-img {border: solid red}; */
+#moving-img {border: solid red};
 
-#moving-img img {width: 100%; height: 100%}
+#moving-img {cursor: pointer}
+#moving-img img {width: 100%; height: 100%; cursor: pointer}
