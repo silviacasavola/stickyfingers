@@ -117,6 +117,8 @@
     <br><br>
     If you want to give back the value of something that you stole, you can do through our partner project <a href="https://unsteal.org/">unsteal.org</a>.
     <br><br>
+    <div id="video_container"><iframe src="https://player.vimeo.com/video/507009021" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    <br>
 
   <!-- <div id="logo-container"> -->
     <a href="https://theshulmancenter.com/"><img src="img/shulman-logo.png"></a>
@@ -139,6 +141,12 @@
 
       $("#about-button").click(function() {
       $("#about").removeClass("about-closed").addClass("about-open");
+
+      let videowidth = $("#video_container").width();
+      let videoheight = (videowidth/16)*9
+      console.log(videowidth, videoheight)
+      $("#video_container").css("height", videoheight)
+      $("iframe").css("height", videoheight)
       })
 
       $("#closure-button").click(function() {

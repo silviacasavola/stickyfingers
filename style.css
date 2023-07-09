@@ -145,7 +145,7 @@ height: 100vh;
  {
    min-width: 55vw;
    max-width: 55vw;
-   max-height: 60vh; }
+   max-height: 70vh; }
 
  #about.about-open .pressura  {
   display: flex;
@@ -155,13 +155,14 @@ height: 100vh;
 .card-columns {
   /* -webkit-column-count: 5; */
   column-count: 5;
+  /* widows: 0; */
 }
 
  #about.about-open #about-text {
   display: inline-block;
   overflow: scroll;
   padding: calc(var(--margin)*2);
-  max-height: 50vh;
+  max-height: 55vh;
   width: 90%;
 }
 
@@ -174,11 +175,15 @@ height: 100vh;
 #about a img {
   height: 7vh;
   padding-right: var(--margin);
-  margin-top: var(--margin);
+  /* margin-top: calc(var(--margin)*2); */
 }
 
 #about-text::-webkit-scrollbar {
   display: none;
+}
+
+#video_container, iframe {
+  width: 100%;
 }
 
 .card {
