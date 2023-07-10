@@ -1,8 +1,4 @@
 :root {
-/* Z-INDEX LAYERS */
-  --bottom-layer: 0;
-  --top-layer: 10;
-
 /* MARGINS */
   --margin: 0.5vw;
   --button-margin: var(--margin) calc(var(--margin)*2) var(--margin) calc(var(--margin)*2);
@@ -109,9 +105,6 @@ height: 100vh;
   left: calc(var(--margin)*2);
   z-index: 15;
   transition: min-width 0.1s ease, max-width 0.1s ease, max-height 0.1s ease;
-
-  /* overflow: scroll;
-  scrollbar-width: none; */
   overflow:hidden;
 }
 
@@ -160,7 +153,7 @@ height: 100vh;
 
  #about.about-open #about-text {
   display: inline-block;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: calc(var(--margin)*2);
   max-height: 55vh;
 }
@@ -182,9 +175,9 @@ height: 100vh;
   /* margin-top: calc(var(--margin)*2); */
 }
 
-#about-text::-webkit-scrollbar {
+/* #about-text::-webkit-scrollbar {
   display: none;
-}
+} */
 
 #video_container, iframe {
   width: 100%;
@@ -210,4 +203,24 @@ height: 100vh;
 
 #differentpadding div {
   padding: 0 !important;
+}
+
+.my-scrollbar::-webkit-scrollbar-track
+{
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+	/* border-radius: 10px; */
+	/* background-color: rgba(0,0,0,0.2); */
+}
+
+.my-scrollbar::-webkit-scrollbar
+{
+	width: 18px;
+	background: none;
+}
+
+.my-scrollbar::-webkit-scrollbar-thumb
+{
+	/* border-radius: 10px; */
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: black;
 }
