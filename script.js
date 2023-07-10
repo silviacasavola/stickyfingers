@@ -3,6 +3,9 @@ data = d3.csv("data/data.csv");
 let cards = d3.select("#all-cards");
 let info = d3.select("#right-side-container")
 
+let width;
+let height;
+
 data.then(function(data) {
 
     // Join your data to the creation of div elements to the same number of items in your dataset.
@@ -56,6 +59,16 @@ data.then(function(data) {
         return path + filename;
     })
 
+    cards.append("a")
+    .attr("href", "mailto:stickyfingers@theshulmancenter.com")
+    .attr("class", "card pressura")
+    .attr("id", "submit")
+    .attr("style", function () {
+      let height2 = $(this).width();
+      return "height: " + height2 + "px";
+    })
+    .append("div")
+    .html("click here<br>to submit<br>your story")
     })
 
 $(document).ready(function() {
@@ -89,3 +102,9 @@ function makeitdraggable(d){
           }
         })
   }
+
+  // cards.selectAll("div")
+  // .join("div")
+  // .attr("class", "card")
+  // .attr("background-color", "yellow")
+  // .html("oppa")
