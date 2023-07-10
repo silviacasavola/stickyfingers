@@ -10,7 +10,7 @@ data.then(function(data) {
     .data(data)
     .join("div")
     .attr("class", "card")
-    .on("mousedown", function(event) {
+    .on("dragstart", function(event) {
       let d = d3.select(event.currentTarget).datum();
 
         width = $(this).width();

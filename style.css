@@ -163,6 +163,10 @@ height: 100vh;
   overflow: scroll;
   padding: calc(var(--margin)*2);
   max-height: 55vh;
+}
+
+#about-text span {
+  display: block;
   width: 90%;
 }
 
