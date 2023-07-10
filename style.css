@@ -216,7 +216,7 @@ height: 100vh;
 
 .my-scrollbar::-webkit-scrollbar
 {
-	width: 20px;
+	width: 5px;
 	background: none;
 }
 
