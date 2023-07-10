@@ -23,9 +23,6 @@ data.then(function(data) {
         $("#moving-img img").attr("src", "img/" + d.path);
         let imgXY = $(this).offset();
 
-        // let date = new Date(d.filing_date);
-        // console.log(date)
-
         var imgX = imgXY.left;
         var imgY = imgXY.top;
 
