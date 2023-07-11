@@ -258,3 +258,14 @@ border: var(--border);
 line-height: 100%;
 margin: auto;
 }
+
+#mobile-text {
+  text-transform: uppercase;
+  font-size: 9vw !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  text-align: center;
+  width: 100vw;
+}
